@@ -2,7 +2,7 @@
 3, 5 -> 243 (3⁵)
 2, 4 -> 16 */
 
-Console.Clear(); 
+/* Console.Clear(); 
 Console.WriteLine("Введите число А: ");
 int a = int.Parse(Console.ReadLine());
 Console.WriteLine("Введите число В: ");
@@ -19,7 +19,7 @@ for (int i=1; i<=b; i++)
     pr=(pr*a);
 } 
 Console.WriteLine("Число " + a + " в степени " + b + " равно " + pr);
-Console.WriteLine();
+Console.WriteLine(); */
 
 
 
@@ -31,23 +31,21 @@ Console.WriteLine();
 82 -> 10
 9012 -> 12 */
 
-/* Console.Clear(); 
+Console.Clear(); 
 Console.WriteLine("Введите число: ");
 int n = int.Parse(Console.ReadLine());
-int i=0;
 int sum=0;
 while(n >0)
   {
     int a=n%10;
     n=n/10;
-    i++;
     sum=sum+a;
   } 
-  Console.WriteLine("Cумма цифр для указанного числа равна " + sum ); */
+  Console.WriteLine("Cумма цифр для указанного числа равна " + sum );
+  
+
 
   //Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
-
-
 /* Console.Clear(); 
 void FillArray (int[] mas)
 {   int length = mas.Length;

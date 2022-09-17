@@ -3,34 +3,46 @@ M = 1; N = 5. -> ""1, 2, 3, 4, 5""
 M = 4; N = 8. -> ""4, 6, 7, 8"" */
 
 Console.Clear();
-Console.WriteLine("Введи натуральные числа M и N:");
-Console.Write("Введи M: ");
+Console.WriteLine("Введите натуральные числа M и N:");
+Console.WriteLine();
+Console.Write("Введите число M: ");
 int m = int.Parse(Console.ReadLine());
-Console.Write("Введи N: ");
+Console.Write("Введите число N: ");
 int n = int.Parse(Console.ReadLine());
-while (m <= 0 || n <= 0)
+
+while ((m > n) || (m <= 0))
 {
-    Console.WriteLine("Числа M и N должны быть больше 0:");
-    Console.Write("Введи M: ");
+    if (m>n) {
+    Console.WriteLine("Число M должно быть меньше числа N ");
+    Console.Write("Введите  число M: ");
     m = int.Parse(Console.ReadLine());
-    Console.Write("Введи N: ");
+    Console.Write("Введите число N: ");
     n = int.Parse(Console.ReadLine());
 }
-Console.WriteLine("Все натуральные числа в промежутке от M до N:");
+    if (m<=0) {
+    Console.WriteLine("Число M должно быть ,больше 0 ");
+    Console.Write("Введите  число M: ");
+    m = int.Parse(Console.ReadLine());
+    Console.Write("Введите число N: ");
+    n = int.Parse(Console.ReadLine());
+}
+}
+
+Console.WriteLine();
 void Numbers(int m, int n)
 {
-    int m1 = m;
-    int n1 = n;
-    if (m > n)
+    if (m == n)
     {
-        m1 = n;
-        n1 = m;
+        Console.WriteLine(n);
+        return;
     }
-    for (int i = m1; i <= n1; i++)
+    if (m < n)
     {
-        Console.Write(i + ", ");
+        Console.Write(m + ", ");
+        Numbers(m + 1, n);
     }
 }
+Console.Write("Все натуральные числа в промежутке от M до N: ");
 Numbers(m, n);
 
 ////////////////////////////////////////////////////
@@ -38,36 +50,53 @@ Numbers(m, n);
 /*  Задача 66: Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N.
 M = 1; N = 15 -> 120
 M = 4; N = 8. -> 30 */
+
+
 /* Console.Clear();
-Console.WriteLine("Введи натуральные числа M и N:");
+Console.WriteLine("Введите натуральные числа M и N:");
 Console.WriteLine();
-Console.Write("Введи M: ");
+Console.Write("Введите число M: ");
 int m = int.Parse(Console.ReadLine());
-Console.Write("Введи N: ");
+Console.Write("Введите число N: ");
 int n = int.Parse(Console.ReadLine());
-Console.WriteLine();
-while (m <= 0 || n <= 0)
+
+while ((m > n) || (m <= 0))
 {
-    Console.WriteLine("Числа M и N должны быть больше 0:");
-    Console.Write("Введи M: ");
+    if (m>n) {
+    Console.WriteLine("Число M должно быть меньше числа N ");
+    Console.Write("Введите  число M: ");
     m = int.Parse(Console.ReadLine());
-    Console.Write("Введи N: ");
+    Console.Write("Введите число N: ");
     n = int.Parse(Console.ReadLine());
 }
-int SummNumbers(int m, int n)
-{
-    int m1 = m;
-    int n1 = n;
-    if (m > n)
-    {
-        m1 = n;
-        n1 = m;
-    }
-    return (n1 + m1) * (n1 - m1 + 1) / 2;
+    if (m<=0) {
+    Console.WriteLine("Число M должно быть ,больше 0 ");
+    Console.Write("Введите  число M: ");
+    m = int.Parse(Console.ReadLine());
+    Console.Write("Введите число N: ");
+    n = int.Parse(Console.ReadLine());
 }
-Console.Write("Сумма натуральных элементов от M до N -> :  ");
-Console.WriteLine(SummNumbers(m, n));
-Console.WriteLine(); */
+}
+Console.WriteLine();
+int sum =0;
+void SumNumbers(int m, int n, int sum)
+{
+    if (m == n)
+    {
+        sum += m;
+        Console.WriteLine(sum);
+        return;
+    }
+    if (m < n)
+    {
+        sum += m;
+        SumNumbers(m + 1, n, sum);
+    }
+}
+Console.Write("Сумма всех натуральных чисел в промежутке от M до N: ");
+SumNumbers(m, n, sum); */
+
+
 
 
 
